@@ -3,6 +3,8 @@ package com.example.demo.entity;
 
 
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -58,6 +60,19 @@ public class StpUser  {
 
     @Column(name="bank_code")
     private String bankCode;
+
+    @Column(name="create_date")
+    private LocalDate createDate;
+
+    @Column(name="update_by")
+    private String updateBy;
+
+    @Column(name="update_date")
+    private LocalDate updateDate;
+
+    @Column(name="status_flag")
+    private String statusFlag;
+
 
 
 }
