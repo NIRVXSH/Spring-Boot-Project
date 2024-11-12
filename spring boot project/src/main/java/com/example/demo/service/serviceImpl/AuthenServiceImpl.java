@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.Request.StpUserReq;
@@ -21,6 +22,9 @@ public class AuthenServiceImpl implements AuthenService {
 
     @Autowired
     private StpUserRepository stpUserRepository;
+
+    @Autowired
+    PasswordEncoder encoder;
 
 
     public BaseResponse validateUserCreate(StpUserReq req){
@@ -44,7 +48,7 @@ public class AuthenServiceImpl implements AuthenService {
             .surnameEn(req.getSurnameEn())
             .dateOfBirth(req.getDateOfBirth())
             .username(req.getUsername())
-            .password(req.getPassword())
+            .password(encoder.encode(req.getPassword()))
             .bankAccountNo(req.getBankAccountNo())
             .bankCode(req.getBankCode())
             .build());
