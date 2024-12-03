@@ -17,33 +17,25 @@ public class StpProductReq {
 
     private String id;
 
-    private String username;
-
-    private String password;
+    private String categoryCode;
 
     private String name;
 
-    private String surname;
-
     private String nameEn;
 
-    private String surnameEn;
+    private Float price;
 
-    private String nickName;
+    private String discountCode;
 
-    private String nickNameEn;
+    private Integer available;
 
-    private String dateOfBirth;
+    private String createdBy;
 
-    private String bankAccountNo;
+    private LocalDate createdDate;
 
-    private String bankCode;
+    private String updatedBy;
 
-    private LocalDate createDate;
-
-    private String updateBy;
-
-    private LocalDate updateDate;
-
+    private LocalDate updatedDate;
+    
     private String statusFlag;
 }

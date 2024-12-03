@@ -1,6 +1,11 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.Request.StpProductReq;
+import com.example.demo.dto.Request.StpUserReq;
+import com.example.demo.dto.Response.BaseResponse;
+
 public interface ProductService {
 
+    BaseResponse createProduct(StpProductReq req);
     
 } 
