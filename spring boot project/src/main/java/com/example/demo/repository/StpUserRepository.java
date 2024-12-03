@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.example.demo.entity.StpUser;
 
 public interface StpUserRepository extends JpaRepository<StpUser,String> {
-    @Query(value = "SELECT * FROM stp_user user where user.username = ?1 ",nativeQuery = true)
+    @Query(value = "SELECT user.* FROM stp_user user where user.username = ?1 ",nativeQuery = true)
     List<StpUser> findUserByUsername(String username);
 
     Optional<StpUser> findByUsername(String username);
