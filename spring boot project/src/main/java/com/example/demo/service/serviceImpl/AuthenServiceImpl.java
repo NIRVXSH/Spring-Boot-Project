@@ -32,7 +32,7 @@ public class AuthenServiceImpl implements AuthenService {
     @Transactional
     public BaseResponse createUser(StpUserReq req) {
         BaseResponse response=new BaseResponse();
-        List<StpUser> checkDup= stpUserRepository.findByUsername(req.getUsername());
+        List<StpUser> checkDup= stpUserRepository.findUserByUsername(req.getUsername());
 
         if(checkDup.isEmpty()){
             stpUserRepository.save(StpUser.builder().id(UUID.randomUUID().toString())
