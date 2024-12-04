@@ -55,12 +55,6 @@ public class StpUser  {
     @Column(name="date_of_birth")
     private String dateOfBirth;
 
-    @Column(name="bank_account_no")
-    private String bankAccountNo;
-
-    @Column(name="bank_code")
-    private String bankCode;
-
     @Column(name="create_date")
     private LocalDate createDate;
 
@@ -73,6 +67,6 @@ public class StpUser  {
     @Column(name="status_flag")
     private String statusFlag;
 
-
-
+    @Column(name = "profile_pic", columnDefinition = "BYTEA")
+    private byte[] profilePic;
 }

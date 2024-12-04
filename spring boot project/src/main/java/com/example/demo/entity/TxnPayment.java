@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -12,38 +11,36 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = "stp_product")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "txn_payment")
 @Builder
-public class StpProduct {
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class TxnPayment {
 
     @Id
-    @Column(name = "id", nullable = false)
     private String id;
 
-    @Column(name = "category_code")
-    private String categoryCode;
+    @Column(name="payment_method_code")
+    private String paymentMethodCode;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name="bank_code")
+    private String bankCode;
 
-    @Column(name = "name_en")
-    private String nameEn;
+    @Column(name="bank_account_no")
+    private String bankAccountNo;
 
-    @Column(name = "price")
-    private Float price;
+    @Column(name="balance")
+    private String balance;
 
-    @Column(name = "discount_code")
-    private String discountCode;
-
-    @Column(name = "available")
-    private Integer available;
+    @Column(name="status")
+    private String status;
 
     @Column(name = "created_by")
     private String createdBy;
@@ -59,10 +56,4 @@ public class StpProduct {
     @Column(name = "updated_date")
     private LocalDate updatedDate;
 
-    @Column(name = "status_flag")
-    private String statusFlag;
-
-    @Column(name = "image_data", columnDefinition = "BYTEA")
-    private byte[] imageData;
 }
-

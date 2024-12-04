@@ -38,4 +38,6 @@ public class StpProductReq {
     private LocalDate updatedDate;
     
     private String statusFlag;
+
+    private byte[] imageData;
 }

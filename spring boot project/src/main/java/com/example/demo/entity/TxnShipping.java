@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -12,38 +11,41 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = "stp_product")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "txn_shipping")
 @Builder
-public class StpProduct {
-
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class TxnShipping {
     @Id
-    @Column(name = "id", nullable = false)
     private String id;
 
-    @Column(name = "category_code")
-    private String categoryCode;
+    @Column(name = "house_no")
+    private String houseNo;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "address")
+    private String address;
 
-    @Column(name = "name_en")
-    private String nameEn;
+    @Column(name = "province")
+    private String province;
 
-    @Column(name = "price")
-    private Float price;
+    @Column(name = "district")
+    private String district;
 
-    @Column(name = "discount_code")
-    private String discountCode;
+    @Column(name = "subDistrict")
+    private String subDistrict;
 
-    @Column(name = "available")
-    private Integer available;
+    @Column(name = "zipCode")
+    private String zipCode;
+
+    @Column(name = "mobile_no")
+    private String mobileNo;
 
     @Column(name = "created_by")
     private String createdBy;
@@ -58,11 +60,4 @@ public class StpProduct {
     @LastModifiedDate
     @Column(name = "updated_date")
     private LocalDate updatedDate;
-
-    @Column(name = "status_flag")
-    private String statusFlag;
-
-    @Column(name = "image_data", columnDefinition = "BYTEA")
-    private byte[] imageData;
 }
-

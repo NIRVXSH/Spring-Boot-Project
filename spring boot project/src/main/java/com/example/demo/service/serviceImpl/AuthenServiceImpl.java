@@ -45,8 +45,6 @@ public class AuthenServiceImpl implements AuthenService {
             .dateOfBirth(req.getDateOfBirth())
             .username(req.getUsername())
             .password(req.getPassword())
-            .bankAccountNo(req.getBankAccountNo())
-            .bankCode(req.getBankCode())
             .build());
             response.setContent("200");;
             

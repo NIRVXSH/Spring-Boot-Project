@@ -35,4 +35,6 @@ public class StpUserReq {
     private String bankAccountNo;
 
     private String bankCode;
+
+    private byte[] profilePic;
 }
