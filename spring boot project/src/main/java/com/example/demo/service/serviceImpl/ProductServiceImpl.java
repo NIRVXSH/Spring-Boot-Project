@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.Request.StpProductReq;
 import com.example.demo.dto.Response.BaseDetailsResponse;
@@ -16,6 +17,7 @@ import com.example.demo.repository.StpProductRepository;
 import com.example.demo.service.ProductService;
 import com.example.demo.util.Constant.ApiReturn;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
    @Autowired

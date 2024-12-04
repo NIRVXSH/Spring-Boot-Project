@@ -23,6 +23,7 @@ public class BaseResponse {
     private Page page;
 
     public BaseResponse() {
+        BaseStatusResponse status = new BaseStatusResponse();
         status.setCode(ApiReturn.SUCCESS.code());
         status.setDescription(ApiReturn.SUCCESS.description());
         this.status = status;
@@ -36,9 +37,11 @@ public class BaseResponse {
         }else{
             this.content = content;
         }
+        BaseStatusResponse status = new BaseStatusResponse();
         status.setCode(ApiReturn.SUCCESS.code());
         status.setDescription(ApiReturn.SUCCESS.description());
         
         this.status = status;
     }
+    
 }

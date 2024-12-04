@@ -8,7 +8,7 @@ public class NirvxshProjApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(NirvxshProjApplication.class, args);
-		System.out.println("-------------------------------------start success-----------------------------------------");
+		System.out.println("-----------------------------------------------start success-----------------------------------------------------");
 	}
 
 }
