@@ -5,4 +5,6 @@ import com.example.demo.dto.Response.BaseResponse;
 
 public interface AuthenService {
     BaseResponse createUser(StpUserReq req);
+
+    BaseResponse changePassword(StpUserReq req);
 }

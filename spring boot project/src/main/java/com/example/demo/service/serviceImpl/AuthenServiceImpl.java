@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.Request.StpUserReq;
@@ -22,6 +23,8 @@ public class AuthenServiceImpl implements AuthenService {
     @Autowired
     private StpUserRepository stpUserRepository;
 
+    @Autowired
+    PasswordEncoder encoder;
 
     public BaseResponse validateUserCreate(StpUserReq req){
         BaseResponse response=new BaseResponse();
@@ -44,7 +47,7 @@ public class AuthenServiceImpl implements AuthenService {
             .surnameEn(req.getSurnameEn())
             .dateOfBirth(req.getDateOfBirth())
             .username(req.getUsername())
-            .password(req.getPassword())
+            .password(encoder.encode(req.getPassword()))
             .build());
             response.setContent("200");;
             
@@ -52,6 +55,32 @@ public class AuthenServiceImpl implements AuthenService {
             response.setContent("400");
         }
         
+        return response;
+    }
+
+    @Override
+    public BaseResponse changePassword(StpUserReq req) {
+        BaseResponse response=new BaseResponse();
+        StpUser validate=stpUserRepository.findById(req.getId()).orElse(null);
+        if(validate!=null){
+            response.setContent("200");
+        }else{
+            response.setContent("400");
+        }
+        return response;
+    }
+
+
+    public BaseResponse resetPassword(StpUserReq req){
+        BaseResponse response=new BaseResponse();
+        StpUser validate=stpUserRepository.findById(req.getId()).orElse(null);
+        if(validate!=null){
+            validate.setPassword(encoder.encode(req.getPassword()));
+            stpUserRepository.save(validate);
+            response.setContent("200");
+        }else{
+            response.setContent("400");
+        }
         return response;
     }
     

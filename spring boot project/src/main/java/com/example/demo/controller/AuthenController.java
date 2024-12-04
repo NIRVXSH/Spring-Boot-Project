@@ -65,4 +65,15 @@ public class AuthenController {
     }
 
 
+    @PostMapping("/change-password")
+    public ResponseEntity<?> changePassword(@RequestBody StpUserReq req){
+        try {
+            return ResponseEntity.ok(null);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+
+
 }
