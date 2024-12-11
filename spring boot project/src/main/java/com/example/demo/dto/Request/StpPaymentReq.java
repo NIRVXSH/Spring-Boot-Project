@@ -3,29 +3,29 @@ package com.example.demo.dto.Request;
 import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class StpProductReq extends BaseRequest {
-
+@AllArgsConstructor
+@Builder
+public class StpPaymentReq {
+    
     private String id;
 
-    private String categoryCode;
+    private String paymentMethodCode;
 
-    private String name;
+    private String bankCode;
 
-    private String nameEn;
+    private String bankAccountNo;
 
-    private Float price;
+    private String balance;
 
-    private String discountCode;
-
-    private Integer available;
+    private String status;
 
     private String createdBy;
 
@@ -34,8 +34,4 @@ public class StpProductReq extends BaseRequest {
     private String updatedBy;
 
     private LocalDate updatedDate;
-    
-    private String statusFlag;
-
-    private byte[] imageProduct;
 }

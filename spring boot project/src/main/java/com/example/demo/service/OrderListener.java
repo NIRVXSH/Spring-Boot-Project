@@ -4,8 +4,6 @@ package com.example.demo.service;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dto.Request.TxnOrderReq;
-
 import jakarta.jms.Message;
 
 @Service
