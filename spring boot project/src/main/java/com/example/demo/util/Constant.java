@@ -198,7 +198,8 @@ public class Constant {
 
         public enum StatusFlag {
 
-                ACTIVE("ACTIVE", "Active", "ใช้งาน"), INACTIVE("INACTIVE", "Inactive", "ไม่ใช้งาน"),
+                ACTIVE("ACTIVE", "Active", "ใช้งาน"), 
+                INACTIVE("INACTIVE", "Inactive", "ไม่ใช้งาน"),
                 DELETE("DELETE", "Delete", "ถูกลบ");
 
                 private final String code;

@@ -4,6 +4,7 @@ package com.example.demo.entity;
 
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -56,17 +57,20 @@ public class StpUser  {
     private String dateOfBirth;
 
     @Column(name="create_date")
-    private LocalDate createDate;
+    private LocalDateTime createDate;
 
     @Column(name="update_by")
     private String updateBy;
 
     @Column(name="update_date")
-    private LocalDate updateDate;
+    private LocalDateTime updateDate;
 
     @Column(name="status_flag")
     private String statusFlag;
 
     @Column(name = "profile_pic", columnDefinition = "BYTEA")
     private byte[] profilePic;
+
+    @Column(name="role_id")
+    private String roleId;
 }

@@ -12,8 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class StpProductReq {
+public class StpProductReq extends BaseRequest {
 
     private String id;
 
@@ -39,5 +38,5 @@ public class StpProductReq {
     
     private String statusFlag;
 
-    private byte[] imageData;
+    private byte[] imageProduct;
 }

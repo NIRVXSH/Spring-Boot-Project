@@ -8,4 +8,7 @@ public interface ProductService {
 
     BaseResponse createProduct(StpProductReq req);
     
+    BaseResponse deleteProduct(StpProductReq req);
+
+    BaseResponse manageProduct(StpProductReq req);
 } 

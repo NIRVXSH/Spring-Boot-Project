@@ -50,19 +50,19 @@ public class StpProduct {
 
     @CreatedDate
     @Column(name = "created_date", updatable = false)
-    private LocalDate createdDate;
+    private LocalDateTime createdDate;
 
     @Column(name = "updated_by")
     private String updatedBy;
 
     @LastModifiedDate
     @Column(name = "updated_date")
-    private LocalDate updatedDate;
+    private LocalDateTime updatedDate;
 
     @Column(name = "status_flag")
     private String statusFlag;
 
-    @Column(name = "image_data", columnDefinition = "BYTEA")
-    private byte[] imageData;
+    @Column(name = "image_product", columnDefinition = "BYTEA")
+    private byte[] imageProduct;
 }
 

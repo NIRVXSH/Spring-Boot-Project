@@ -32,9 +32,7 @@ public class StpUserReq {
 
     private String dateOfBirth;
 
-    private String bankAccountNo;
-
-    private String bankCode;
-
     private byte[] profilePic;
+
+    private String roleId;
 }

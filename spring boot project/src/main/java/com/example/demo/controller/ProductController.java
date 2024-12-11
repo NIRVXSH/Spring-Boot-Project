@@ -29,4 +29,28 @@ public class ProductController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @PostMapping("/delete")
+    public ResponseEntity<?> deleteProduct(@RequestBody StpProductReq req){
+        try {
+             BaseResponse response= productService.deleteProduct(req);
+             return ResponseEntity.ok(response);
+         } catch (Exception e) {
+             return ResponseEntity.badRequest().body(e.getMessage());
+         }
+     }
+
+     @PostMapping("/manage")
+     public ResponseEntity<?> mangeProduct(@RequestBody StpProductReq req){
+         try {
+              BaseResponse response= productService.manageProduct(req);
+              return ResponseEntity.ok(response);
+          } catch (Exception e) {
+              return ResponseEntity.badRequest().body(e.getMessage());
+          }
+      }
+
+
+ 
+
 }
