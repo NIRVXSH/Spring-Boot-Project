@@ -230,5 +230,40 @@ public class Constant {
                 }
 
         }
+
+
+        public enum PaymentMethod {
+
+                CASH("CASH", "Cash", "เงินสด"), 
+                BANK("BANK", "Bank", "ธนาคาร");
+
+                private final String code;
+                private final String valueEn;
+                private final String valueTh;
+
+                PaymentMethod(String code, String valueEn, String valueTh) {
+                        this.code = code;
+                        this.valueEn = valueEn;
+                        this.valueTh = valueTh;
+                }
+
+                @Override
+                public String toString() {
+                        return this.code;
+                }
+
+                public String code() {
+                        return code;
+                }
+
+                public String valueEn() {
+                        return valueEn;
+                }
+
+                public String valueTh() {
+                        return valueTh;
+                }
+
+        }
         
 }

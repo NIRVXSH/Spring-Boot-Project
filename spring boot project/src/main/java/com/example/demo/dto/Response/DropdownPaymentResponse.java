@@ -1,4 +1,4 @@
-package com.example.demo.dto.Request;
+package com.example.demo.dto.Response;
 
 import java.time.LocalDate;
 
@@ -8,12 +8,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class StpPaymentReq extends BaseRequest {
-    
+@NoArgsConstructor
+@Builder
+public class DropdownPaymentResponse {
+
     private String id;
 
     private String paymentMethodCode;
