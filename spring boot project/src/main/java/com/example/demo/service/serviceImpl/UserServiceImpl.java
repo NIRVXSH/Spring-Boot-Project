@@ -14,13 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.dto.Request.BaseRequest;
 import com.example.demo.dto.Request.StpPaymentReq;
-import com.example.demo.dto.Request.StpProductReq;
 import com.example.demo.dto.Response.BaseDetailsResponse;
 import com.example.demo.dto.Response.BaseResponse;
 import com.example.demo.dto.Response.BaseStatusResponse;
 import com.example.demo.dto.Response.DropdownPaymentResponse;
 import com.example.demo.entity.StpPayment;
-import com.example.demo.entity.StpProduct;
 import com.example.demo.repository.StpPaymentRepository;
 import com.example.demo.service.UserService;
 import com.example.demo.util.Constant.ApiReturn;

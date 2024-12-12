@@ -1,4 +1,5 @@
 com\example\demo\service\OrderListener.class
+com\example\demo\dto\Response\DropdownResponse.class
 com\example\demo\entity\TxnShipping$TxnShippingBuilder.class
 com\example\demo\service\UserService.class
 com\example\demo\NirvxshProjApplication.class
@@ -41,6 +42,7 @@ com\example\demo\entity\StpUser.class
 com\example\demo\dto\Request\BaseRequest$BaseRequestBuilder.class
 com\example\demo\service\serviceImpl\AuthenServiceImpl.class
 com\example\demo\util\Constant$PaymentMethod.class
+com\example\demo\config\ModelMapperConfig.class
 com\example\demo\controller\UserController.class
 com\example\demo\config\services\UserDetailsImpl.class
 com\example\demo\dto\Response\DropdownPaymentResponse$DropdownPaymentResponseBuilder.class
@@ -48,6 +50,7 @@ com\example\demo\service\AuthenService.class
 com\example\demo\service\serviceImpl\UserServiceImpl.class
 com\example\demo\dto\Response\BaseStatusResponse$BaseStatusResponseBuilder.class
 com\example\demo\controller\ProductController.class
+com\example\demo\dto\Response\DropdownResponse$DropdownResponseBuilder.class
 com\example\demo\dto\Response\BaseDetailsResponse.class
 com\example\demo\dto\Request\StpProductReq.class
 com\example\demo\entity\StpPayment$StpPaymentBuilder.class
