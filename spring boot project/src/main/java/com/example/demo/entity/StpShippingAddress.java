@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -16,13 +16,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "txn_shipping")
+@Table(name = "stp_shipping_address")
 @Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TxnShipping {
+public class StpShippingAddress {
     @Id
     private String id;
 
@@ -47,17 +47,20 @@ public class TxnShipping {
     @Column(name = "mobile_no")
     private String mobileNo;
 
+    @Column(name = "status")
+    private String status;
+
     @Column(name = "created_by")
     private String createdBy;
 
     @CreatedDate
     @Column(name = "created_date", updatable = false)
-    private LocalDate createdDate;
+    private LocalDateTime createdDate;
 
     @Column(name = "updated_by")
     private String updatedBy;
 
     @LastModifiedDate
     @Column(name = "updated_date")
-    private LocalDate updatedDate;
+    private LocalDateTime updatedDate;
 }
