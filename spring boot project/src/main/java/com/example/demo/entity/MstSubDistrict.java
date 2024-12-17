@@ -23,7 +23,7 @@ public class MstSubDistrict {
     @Column(name="zip_code")
     private String zipCode;
     @Column(name="name_th")
-    private String nameTh;
+    private String name;
     @Column(name="name_en")
     private String nameEn;
     @Column(name="district_id")

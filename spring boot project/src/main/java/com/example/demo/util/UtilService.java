@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class UtilService {
 
     
-    public static <E, D> D mapEntityToDto(E entity, Class<D> dtoClass, Map<String, List<String>> transformationRules) {
+    public  <E, D> D mapEntityToDto(E entity, Class<D> dtoClass, Map<String, List<String>> transformationRules) {
         ObjectMapper objectMapper = new ObjectMapper(); // ใช้สำหรับแปลง String JSON เป็น HashMap
         D dto;
 

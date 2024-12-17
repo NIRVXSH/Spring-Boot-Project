@@ -55,18 +55,14 @@ public class MstService {
 
     public List<DropdownDistrictResponse> getDropdownDistrict(AddressReq req) {
         List<DropdownDistrictResponse> district = districtRepository.findByProvinceId(req.getProvinceId()).stream()
-                .map(province1 -> DropdownDistrictResponse.builder().id(province1.getId())
-                        .provinceId(province1.getProvinceId()).name(province1.getNameTh()).nameEn(province1.getNameEn())
-                        .build())
+                .map(district1 -> utilService.mapEntityToDto(district1,DropdownDistrictResponse.class, null))
                 .toList();
         return district;
     }
 
     public List<DropdownSubDistrictResponse> getDropdownSubDistrict(AddressReq req) {
         List<DropdownSubDistrictResponse> subDistrict = subDistrictRepository.findByDistrictId(req.getDistrictId()).stream()
-                .map(subDistrict1 -> DropdownSubDistrictResponse.builder().id(subDistrict1.getId())
-                        .districtId(subDistrict1.getDistrictId()).zipCode(subDistrict1.getZipCode()).name(subDistrict1.getNameTh()).nameEn(subDistrict1.getNameEn())
-                        .build())
+                .map(subDistrict1 -> utilService.mapEntityToDto(subDistrict1,DropdownSubDistrictResponse.class, null))
                 .toList();
         return subDistrict;
     }
