@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,7 @@ import com.example.demo.repository.MstBankRepository;
 import com.example.demo.repository.MstDistrictRepository;
 import com.example.demo.repository.MstProvinceRepository;
 import com.example.demo.repository.MstSubDistrictRepository;
+import com.example.demo.util.UtilService;
 
 @Service
 public class MstService {
@@ -30,6 +33,9 @@ public class MstService {
 
     @Autowired
     private MstSubDistrictRepository subDistrictRepository;
+    
+    @Autowired
+    private UtilService utilService;
 
     public List<DropdownResponse> getDropdownBank() {
         List<DropdownResponse> bank = bankRepository.findAll().stream()
@@ -40,9 +46,9 @@ public class MstService {
     }
 
     public List<DropdownProvinceResponse> getDropdownProvince() {
-        List<DropdownProvinceResponse> province = provinceRepository.findAll().stream()
-                .map(province1 -> DropdownProvinceResponse.builder().id(province1.getId()).name(province1.getNameTh())
-                        .nameEn(province1.getNameEn()).build())
+        Map<String, List<String>> transformationRules = new HashMap<>();
+                List<DropdownProvinceResponse> province = provinceRepository.findAll().stream()
+                .map(province1 -> utilService.mapEntityToDto(province1, DropdownProvinceResponse.class, transformationRules))
                 .toList();
         return province;
     }

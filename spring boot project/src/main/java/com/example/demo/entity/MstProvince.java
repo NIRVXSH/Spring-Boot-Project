@@ -22,7 +22,7 @@ public class MstProvince {
     @Id
     private String id;
 	@Column(name="name_th")
-    private String nameTh ;
+    private String name ;
 	@Column(name="name_en")
     private String nameEn ;
 	@Column(name="geography_id")
