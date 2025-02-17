@@ -52,14 +52,11 @@ public class OrderService {
                 .toList();
 
         ordersItemRepository.saveAll(orderItems);
+        
 
-        jmsTemplate.convertAndSend(queueName, orderDetails);
+        jmsTemplate.convertAndSend(queueName, orderItems);
     }
 
-    @JmsListener(destination = "${spring.activemq.queue-name}")
-    public void ProcessOrder(Message orderDetails) {
-        // System.out.println("Received order message: " + orderDetails);
 
-    }
 
 }

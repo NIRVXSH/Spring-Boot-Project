@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.Response.DropdownDistrictResponse;
 import com.example.demo.dto.Response.DropdownProvinceResponse;
+import com.example.demo.dto.Response.DropdownResponse;
 import com.example.demo.dto.Response.DropdownSubDistrictResponse;
 import com.example.demo.repository.MstBankRepository;
 import com.example.demo.repository.MstDistrictRepository;
@@ -31,11 +32,17 @@ public class CacheService {
 
     @Autowired
     private UtilService utilService;
-
+    private ConcurrentHashMap<String, DropdownResponse> bankCache = new ConcurrentHashMap<>();
     private ConcurrentHashMap<String, DropdownProvinceResponse> provinceCache = new ConcurrentHashMap<>();
     private ConcurrentHashMap<String, DropdownDistrictResponse> districtCache = new ConcurrentHashMap<>();
     private ConcurrentHashMap<String, DropdownSubDistrictResponse> subDistrictCache = new ConcurrentHashMap<>();
 
+    public void initBankCache() {
+        System.out.println("Init Bank Cache");
+        List<DropdownResponse> dtoList = bankRepository.findAll().stream().map(bank->DropdownResponse.builder().id(bank.getId()).code(bank.getBankCode())
+        .name(bank.getBankName()).nameEn(bank.getBankNameEn()).build()).toList();
+        dtoList.forEach(dto -> bankCache.put(dto.getId(), dto));
+    }
     public void initProvinceCache() {
         System.out.println("Init Province Cache");
         List<DropdownProvinceResponse> dtoList = provinceRepository.findAll().stream()
@@ -59,6 +66,10 @@ public class CacheService {
 
     public List<DropdownProvinceResponse> getAllProvince() {
         return provinceCache.values().stream().toList();
+    }
+
+    public List<DropdownResponse> getAllBank() {
+        return bankCache.values().stream().toList();
     }
 
     public void refreshCache() {

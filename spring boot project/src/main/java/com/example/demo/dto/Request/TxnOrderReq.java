@@ -4,10 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,8 +13,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class TxnOrderReq implements Serializable {
+public class TxnOrderReq implements Serializable{
 
     private String id;
 
@@ -25,7 +21,7 @@ public class TxnOrderReq implements Serializable {
 
     private String paymentId;
 
-    private String shippingId;
+    private String shippingAddressId;
 
     private String userId;
 
@@ -37,11 +33,12 @@ public class TxnOrderReq implements Serializable {
 
     List<OrderItem> orderItems;
 
+
     @Getter
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    public class OrderItem implements Serializable {
+    public static class OrderItem implements Serializable {
 
         private String id;
 

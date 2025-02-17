@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -19,7 +20,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TxnOrdersItem {
+public class TxnOrdersItem implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     private String id;
     @Column(name="productId")

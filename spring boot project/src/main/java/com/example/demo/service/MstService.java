@@ -39,11 +39,11 @@ public class MstService {
     private UtilService utilService;
 
     public List<DropdownResponse> getDropdownBank() {
-        List<DropdownResponse> bank = bankRepository.findAll().stream()
-                .map(bank1 -> DropdownResponse.builder().id(bank1.getId()).code(bank1.getBankCode())
-                        .name(bank1.getBankName()).nameEn(bank1.getBankNameEn()).build())
-                .toList();
-        return bank;
+        // List<DropdownResponse> bank = bankRepository.findAll().stream()
+        //         .map(bank1 -> DropdownResponse.builder().id(bank1.getId()).code(bank1.getBankCode())
+        //                 .name(bank1.getBankName()).nameEn(bank1.getBankNameEn()).build())
+        //         .toList();
+        return cacheService.getAllBank();
     }
 
     public List<DropdownProvinceResponse> getDropdownProvince() {

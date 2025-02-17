@@ -12,6 +12,7 @@ public class CacheLoader implements CommandLineRunner {
     private CacheService cacheService;
 
     public void run(String... args) {
+        cacheService.initBankCache();
         cacheService.initDistrictCache();
         cacheService.initProvinceCache();
         cacheService.initSubDistrictCache();
